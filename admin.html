@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenRoots - Admin Dashboard</title>
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>🌱 GreenRoots</h2>
+        <p class="admin-label">ADMIN PANEL</p>
+
+        <nav>
+            <a href="#" class="nav-link active" data-section="overview">📊 Dashboard</a>
+            <a href="#" class="nav-link" data-section="trees">🌳 Manage Trees</a>
+            <a href="#" class="nav-link" data-section="volunteers">👥 Volunteers</a>
+            <a href="#" class="nav-link" data-section="campaigns">🌿 Campaigns</a>
+            <a href="#" class="nav-link" data-section="donations">💚 Donations</a>
+        </nav>
+        <a href="index.html" class="back-home">← Back to Website</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Admin Dashboard</h2>
+                <p>Welcome to GreenRoots Management</p>
+            </div>
+            <div class="admin-profile">👤 Admin</div>
+        </header>
+
+        <!-- Dashboard Overview -->
+        <section id="overview" class="content-section active">
+
+            <h2>Dashboard Overview</h2>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <h3>Total Trees</h3>
+                    <h1 id="totalTrees">0</h1>
+                    <p>🌳 Trees registered</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Volunteers</h3>
+                    <h1 id="totalVolunteers">0</h1>
+                    <p>👥 Registered volunteers</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Campaigns</h3>
+                    <h1 id="totalCampaigns">0</h1>
+                    <p>🌿 Campaigns created</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Donations</h3>
+                    <h1 id="totalDonations">₹0</h1>
+                    <p>💚 Recorded donations</p>
+                </div>
+
+            </div>
+
+            <div class="panel">
+                <h3>Recent Volunteers</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentVolunteers"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage Trees -->
+        <section id="trees" class="content-section">
+
+            <h2>Manage Trees 🌳</h2>
+
+            <div class="panel">
+                <h3>Add New Tree</h3>
+
+                <form id="treeForm">
+
+                    <input type="text" id="treeName"
+                        placeholder="Tree Name" required>
+
+                    <input type="text" id="treeLocation"
+                        placeholder="Tree Location" required>
+
+                    <input type="date" id="treeDate" required>
+
+                    <button type="submit">Add Tree</button>
+
+                </form>
+            </div>
+
+            <div class="panel">
+                <h3>Tree Records</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tree Name</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="treeTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage Volunteers -->
+        <section id="volunteers" class="content-section">
+
+            <h2>Manage Volunteers 👥</h2>
+
+            <div class="panel">
+
+                <input type="search" id="searchVolunteer"
+                    placeholder="Search volunteer...">
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Location</th>
+                                <th>Interest</th>
+                                <th>Availability</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="volunteerTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage Campaigns -->
+        <section id="campaigns" class="content-section">
+
+            <h2>Manage Campaigns 🌿</h2>
+
+            <div class="panel">
+                <h3>Create New Campaign</h3>
+
+                <form id="campaignForm">
+
+                    <input type="text" id="campaignName"
+                        placeholder="Campaign Name" required>
+
+                    <input type="text" id="campaignLocation"
+                        placeholder="Campaign Location" required>
+
+                    <input type="date" id="campaignDate" required>
+
+                    <button type="submit">Create Campaign</button>
+
+                </form>
+            </div>
+
+            <div class="panel">
+                <h3>Campaign Records</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Campaign</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="campaignTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donations -->
+        <section id="donations" class="content-section">
+
+            <h2>Manage Donations 💚</h2>
+
+            <div class="panel">
+                <h3>Donation Records</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Donor Name</th>
+                                <th>Email</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donationTable"></tbody>
+                        <tbody id="donationTableBody"></tbody>
+                    </table>
+                </div>
+                <p class="note">
+                    Donation records will appear here after
+                    connecting a donation system.
+                </p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
+<section class="content-card" id="feedbackSection">
+
+    <h2>⭐ Manage Feedback</h2>
+
+    <h3>Customer Feedback Records</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Rating</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <a href="#feedbackSection">
+            Manage Feedback
+        </a>
+        <tbody id="feedbackTableBody">
+        </tbody>
+    </table>
+
+</section>

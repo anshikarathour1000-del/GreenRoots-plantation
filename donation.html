@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now | GreenRoots</title>
+    <link rel="stylesheet" href="donation.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>🌱 GreenRoots</h2>
+    <a href="index.html">Home</a>
+</header>
+
+<section class="donation-section">
+    <div class="donation-card">
+        <h1>Support GreenRoots 🌳</h1>
+        <p>Your donation helps us plant more trees and protect nature.</p>
+
+        <form id="donationForm">
+
+            <label>Full Name</label>
+            <input type="text" id="donorName"
+                   placeholder="Enter your name" required>
+
+            <label>Email Address</label>
+            <input type="email" id="donorEmail"
+                   placeholder="Enter your email" required>
+
+            <label>Mobile Number</label>
+            <input type="tel" id="donorPhone"
+                   placeholder="10 digit mobile number"
+                   pattern="[0-9]{10}" required>
+
+            <label>Select Donation Amount</label>
+
+            <div class="amounts">
+                <button type="button" class="amount-btn" data-amount="100">₹100</button>
+                <button type="button" class="amount-btn" data-amount="500">₹500</button>
+                <button type="button" class="amount-btn" data-amount="1000">₹1000</button>
+            </div>
+
+            <label>Custom Amount (₹)</label>
+            <input type="number" id="donationAmount"
+                   placeholder="Enter amount" min="1" required>
+
+            <label>Message (Optional)</label>
+            <textarea id="donorMessage"
+                      placeholder="Write your message"></textarea>
+
+            <button type="submit" class="donate-btn">
+                Submit Donation
+            </button>
+
+        </form>
+
+        <p id="successMessage"></p>
+    </div>
+</section>
+
+<script src="donation.js"></script>
+</body>
+</html>

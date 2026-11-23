@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenRoots - Adopt a Tree</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <nav>
+        <h2>GreenRoots 🌳</h2>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="adoption.html">Adopt Tree</a>
+        </div>
+    </nav>
+
+    <section class="adoption-header">
+        <h1>Choose Your Tree 🌱</h1>
+        <p>Adopt a tree today and make our planet greener.</p>
+    </section>
+
+    <section class="tree-container">
+
+        <div class="tree-card">
+            <h2>🌳 Neem Tree</h2>
+            <p>Neem trees help improve air quality and provide shade.</p>
+            <p><b>Category:</b> Medicinal Tree</p>
+            <button onclick="selectTree('Neem')">
+                Adopt Neem
+            </button>
+        </div>
+
+        <div class="tree-card">
+            <h2>🌳 Banyan Tree</h2>
+            <p>Banyan trees provide shelter to birds and wildlife.</p>
+            <p><b>Category:</b> Shade Tree</p>
+            <button onclick="selectTree('Banyan')">
+                Adopt Banyan
+            </button>
+        </div>
+
+        <div class="tree-card">
+            <h2>🌺 Gulmohar Tree</h2>
+            <p>Gulmohar trees make our cities beautiful and green.</p>
+            <p><b>Category:</b> Flowering Tree</p>
+            <button onclick="selectTree('Gulmohar')">
+                Adopt Gulmohar
+            </button>
+        </div>
+
+    </section>
+
+    <section class="adoption-form">
+        <h2>Tree Adoption Form</h2>
+
+        <form id="adoptionForm">
+            <label>Your Name</label>
+            <input type="text" id="name"
+                   placeholder="Enter your name" required>
+
+            <label>Email Address</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email" required>
+
+            <label>Selected Tree</label>
+            <input type="text" id="tree"
+                   placeholder="Choose a tree above" readonly required>
+
+            <label>Plantation Location</label>
+            <input type="text" id="location"
+                   placeholder="Enter your city" required>
+
+            <button type="submit">Submit Adoption</button>
+        </form>
+    </section>
+
+    <script>
+        function selectTree(treeName) {
+            document.getElementById("tree").value = treeName;
+
+            document.querySelector(".adoption-form")
+                .scrollIntoView({ behavior: "smooth" });
+        }
+
+        document.getElementById("adoptionForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Thank you for adopting a tree! 🌳");
+                this.reset();
+            });
+    </script>
+</body>
+</html>
+

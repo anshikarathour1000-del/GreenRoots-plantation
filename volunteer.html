@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenRoots - Volunteer Registration</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>GreenRoots 🌳</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="adoption.html">Adopt Tree</a>
+            <a href="map.html">Tree Map</a>
+            <a href="volunteer.html">Volunteer</a>
+        </div>
+    </nav>
+
+    <section class="volunteer-hero">
+        <h1>Become a GreenRoots Volunteer 🌱</h1>
+        <p>
+            Join our mission to make the world greener.
+            Register today and help us plant more trees!
+        </p>
+    </section>
+
+    <section class="volunteer-container">
+
+        <h2>Volunteer Registration Form</h2>
+
+        <p>Fill in your details below to join our campaign.</p>
+
+        <form id="volunteerForm">
+
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="phone">Mobile Number</label>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter 10-digit mobile number"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required
+            >
+
+            <label for="location">Your City / Location</label>
+            <input
+                type="text"
+                id="location"
+                placeholder="Enter your city"
+                required
+            >
+
+            <label for="interest">Area of Interest</label>
+
+            <select id="interest" required>
+                <option value="">Select your interest</option>
+                <option value="Tree Plantation">Tree Plantation</option>
+                <option value="Tree Care">Tree Care</option>
+                <option value="Environmental Awareness">
+                    Environmental Awareness
+                </option>
+                <option value="Event Management">
+                    Event Management
+                </option>
+            </select>
+
+            <label for="availability">Availability</label>
+
+            <select id="availability" required>
+                <option value="">Select availability</option>
+                <option value="Weekdays">Weekdays</option>
+                <option value="Weekends">Weekends</option>
+                <option value="Both">Both</option>
+            </select>
+
+            <label for="message">Why do you want to volunteer?</label>
+            <textarea
+                id="message"
+                rows="4"
+                placeholder="Write something about yourself..."
+            ></textarea>
+
+            <label class="consent">
+                <input type="checkbox" id="consent" required>
+                I agree to participate in GreenRoots activities.
+            </label>
+
+            <button type="submit" class="volunteer-btn">
+                Register as Volunteer
+            </button>
+
+        </form>
+
+        <p id="successMessage"></p>
+
+    </section>
+
+    <footer>
+        <p>© 2026 GreenRoots Plantation Project.
+        Save Nature, Save Future 🌳</p>
+    </footer>
+
+    <script src="js/volunteer.js"></script>
+
+</body>
+</html>

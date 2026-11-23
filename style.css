@@ -1,0 +1,723 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8f1;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #11532d;
+    color:#f4f8f1
+}
+
+nav a {
+    color: #f4f8f1;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: #14532d;
+}
+
+.hero h1 {
+    font-size: 45px;
+    color: 14532d;
+}
+
+.hero p {
+    margin: 20px;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    background: #15803d;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Statistics */
+.state {
+    text-align: center;
+    padding: 50px;
+}
+
+.card {
+    display: inline-block;
+    background: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #0002;
+}
+
+/* Tree Adoption Page */
+
+.adoption-header {
+    text-align: center;
+    padding: 50px 20px;
+    background: #b0ebb5;
+}
+
+.adoption-header h1 {
+    color: #1b5e20;
+    font-size: 35px;
+}
+
+.tree-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+.tree-card {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #0002;
+}
+
+.tree-card h2 {
+    color: #2e7d32;
+}
+
+.tree-card button,
+.adoption-form button {
+    background: #2e7d32;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.adoption-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #f1f8e9;
+    border-radius: 12px;
+}
+
+.adoption-form h2 {
+    text-align: center;
+}
+
+.adoption-form label {
+    display: block;
+    margin-top: 15px;
+}
+
+.adoption-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.adoption-form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#map-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#map-section h2 {
+    color: 176B3A;
+    font-size: 30px;
+}
+
+#map-section p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#map {
+    width: 200%;
+    height: 500px;
+    border-radius: 15px;
+    border: 2px solid #2e8b57;
+    z-index: 1;
+}
+
+/* Volunteer Registration Page */
+
+.volunteer-hero {
+    text-align: center;
+    background: #e8f5e9;
+    padding: 45px 20px;
+    color: #1b5e20;
+}
+
+.volunteer-hero h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.volunteer-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.volunteer-container h2 {
+    text-align: center;
+    color: #2e7d32;
+}
+
+.volunteer-container > p {
+    text-align: center;
+    color: #666;
+}
+
+#volunteerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+#volunteerForm label {
+    font-weight: bold;
+    color: #333;
+}
+
+#volunteerForm input:not([type="checkbox"]),
+#volunteerForm select,
+#volunteerForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+#volunteerForm textarea {
+    resize: vertical;
+}
+
+#volunteerForm .consent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.volunteer-btn {
+    background: #2e7d32;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.volunteer-btn:hover {
+    background: #1b5e20;
+}
+
+#successMessage {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 650px) {
+    .volunteer-container {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    .volunteer-hero h1 {
+        font-size: 24px;
+    }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f9f4;
+  color: #243b2a;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: #174d2b;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-btn, .btn {
+  background: #65bd63;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero {
+  min-height: 500px;
+  background: linear-gradient(
+    rgba(10, 65, 30, .75),
+    rgba(10, 65, 30, .75)
+  ), url("https://images.unsplash.com/photo-1448375240586-882707db888b");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid white;
+  margin-left: 10px;
+}
+
+.impact {
+  padding: 60px 7%;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgb(252, 252, 252);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
+  min-width: 200px;
+}
+
+.card h2 {
+  color: #269447;
+}
+
+.adopt {
+  text-align: center;
+  padding: 65px 20px;
+  background: #e1f1df;
+}
+
+.adopt h2 {
+  margin-bottom: 15px;
+}
+
+.adopt p {
+  margin-bottom: 25px;
+}
+
+footer {
+  background: #174d2b;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media(max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+
+/* COMMON SECTION DESIGN */
+section {
+    padding: 65px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading span {
+    color: #4caf50;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: #174d28;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #777;
+}
+
+/* ABOUT */
+.about-section {
+    background: #f5faf4;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-image, .about-content {
+    flex: 1 1 300px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-content h2 {
+    color: #205c30;
+    font-size: 28px;
+}
+
+.about-content p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* BENEFITS */
+.benefits-section {
+    background: white;
+}
+
+.benefits-grid,
+.tree-grid,
+.process-grid,
+.events-grid,
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.benefit-card,
+.tree-card,
+.process-card,
+.event-card,
+.testimonial-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.benefit-card:hover,
+.tree-card:hover,
+.process-card:hover,
+.event-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-8px);
+}
+
+.benefit-card div {
+    font-size: 42px;
+}
+
+.benefit-card h3,
+.tree-card h3,
+.process-card h3 {
+    color: #286b39;
+}
+
+/* TREE CARDS */
+.adopt-section {
+    background: #eef7eb;
+}
+
+.tree-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tree-card {
+    padding: 15px;
+}
+
+.tree-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BUTTONS */
+.green-btn,
+.outline-btn {
+    display: inline-block;
+    background: #4caf50;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+.green-btn:hover {
+    background: #216b32;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    margin-left: 10px;
+}
+
+/* PROCESS */
+.process-section {
+    background: white;
+}
+
+.process-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.process-card h1 {
+    color: #65b947;
+    font-size: 40px;
+}
+
+/* EVENTS */
+.events-section {
+    background: #f2f8f0;
+}
+
+.events-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.event-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-info {
+    padding: 18px;
+}
+
+.event-info h3 {
+    color: #216b32;
+}
+
+/* GALLERY */
+.gallery-section {
+    background: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+    background: #eef7eb;
+}
+
+.testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.stars {
+    color: #f4b400;
+    font-size: 23px;
+}
+
+/* FINAL CTA */
+.final-cta {
+    background: linear-gradient(rgba(0,70,25,0.85), rgba(0,70,25,0.85)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 85px 20px;
+}
+
+.final-cta h2 {
+    font-size: 32px;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width: 768px) {
+    .benefits-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tree-grid,
+    .events-grid,
+    .testimonial-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+}
+
+@media(max-width: 420px) {
+    .benefits-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card .stars {
+    color: #e6a800;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    color: #666;
+    font-size: 15px;
+}
+
+.testimonial-card h3 {
+    color: #315c3b;
+    margin-bottom: 5px;
+}
+
+.testimonial-card span {
+    color: #888;
+    font-size: 13px;
+}
+
+/* Reduce gap in Green Impact section */
+.impact-section {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+/* Move plantation map section upward */
+.map-section {
+    margin-top: 0;
+    padding-top: 10px;
+}
+

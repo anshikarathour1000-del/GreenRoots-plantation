@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | GreenRoots</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: #183b26;
+      background: linear-gradient(rgba(8, 65, 32, .78), rgba(8, 65, 32, .78)),
+                  url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1800&q=85") center/cover fixed;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      min-height: 76px;
+      padding: 14px 5%;
+      background: #087a35;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: white;
+    }
+    .brand { font-size: 25px; font-weight: 800; }
+    .brand span { color: #b8ff55; }
+    nav a { color: white; text-decoration: none; font-weight: 600; }
+    main { flex: 1; display: grid; place-items: center; padding: 38px 16px; }
+    .signup-card {
+      width: min(100%, 440px);
+      background: rgba(255,255,255,.97);
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.25);
+    }
+    h1 { margin: 0 0 8px; text-align: center; color: #087a35; }
+    .intro { margin: 0 0 24px; text-align: center; color: #5c6b60; }
+    label { display: block; margin: 14px 0 6px; font-weight: 700; font-size: 14px; }
+    input {
+      width: 100%; padding: 12px 13px; border: 1px solid #cbd8ce;
+      border-radius: 8px; font-size: 15px; outline: none;
+    }
+    input:focus { border-color: #159447; box-shadow: 0 0 0 3px #15944720; }
+    .terms { display: flex; align-items: flex-start; gap: 9px; margin: 16px 0; font-size: 13px; color: #526257; }
+    .terms input { width: auto; margin-top: 2px; }
+    button {
+      width: 100%; border: 0; border-radius: 9px; padding: 13px;
+      background: #8eea3d; color: #12351e; font-size: 16px;
+      font-weight: 800; cursor: pointer;
+    }
+    button:hover { background: #7bd52e; }
+    .login { text-align: center; margin: 18px 0 0; font-size: 14px; }
+    .login a { color: #087a35; font-weight: 700; }
+    #message { margin-top: 14px; text-align: center; font-size: 14px; }
+    footer { text-align: center; color: white; padding: 14px; font-size: 13px; }
+    @media (max-width: 480px) {
+      nav { padding: 14px 18px; }
+      .signup-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">🌱 Green<span>Roots</span></div>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <main>
+    <section class="signup-card">
+      <h1>Create Account</h1>
+      <p class="intro">Join GreenRoots and help grow a greener future.</p>
+
+      <form id="signupForm">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Create a password" minlength="8" autocomplete="new-password" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Enter password again" minlength="8" autocomplete="new-password" required>
+
+        <div class="terms">
+          <input id="terms" type="checkbox" required>
+          <label for="terms" style="margin:0;font-weight:400">I agree to the website's terms and conditions.</label>
+        </div>
+
+        <button type="submit">Sign Up</button>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="login">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+
+  <footer>© 2026 GreenRoots · Plant a tree, grow a future.</footer>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        message.style.color = "#b42318";
+        message.textContent = "Passwords do not match. Please try again.";
+        return;
+      }
+
+      message.style.color = "#087a35";
+      message.textContent = "Form checked! Connect a backend to create and save real user accounts.";
+    });
+  </script>
+</body>
+</html>
+
